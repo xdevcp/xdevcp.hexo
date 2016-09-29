@@ -1,10 +1,8 @@
-# xdevcp.github.com
-https://github.com/xdevcp/xdevcp.github.com.git
 
-http://x.devcp.org
+[我的Hexo网站](http://x.devcp.org)
 
 ## HEXO
-https://hexo.io/
+[Hexo官网](https://hexo.io/)
 ```
 npm install hexo-cli -g
 hexo init blog
@@ -13,7 +11,10 @@ npm install
 hexo server
 ```
 
-原文链接：http://www.jianshu.com/p/701b1095da11
+[入门参考](http://www.jianshu.com/p/701b1095da11)
+[Hexo常用命令笔记](https://segmentfault.com/a/1190000002632530)
+[Hexo常见问题解决方案](https://xuanwo.org/2014/08/14/hexo-usual-problem/)
+[NexT 使用文档](http://theme-next.iissnan.com/getting-started.html)
 
 ## hexo使用
 目录结构

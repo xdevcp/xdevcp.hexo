@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title></title>
+    <!-- Bootstrap 核心CSS文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<div class="row">
+    <div class="col-md-6">
+        <table class="table table-condensed table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>column1</th>
+                <th>column2</th>
+            </tr>
+            </thead>
+            <tbody id="content">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--内容模板-->
+<script type="text/html" id="templateid">
+    {{each data}}
+    <tr>
+        <td>{{$index + 1}}</td>
+        <td>{{$value.companyname}}</td>
+        <td>{{$value.companysite}}</td>
+    </tr>
+    {{/each}}
+</script>
+
+<!-- 放置在页面结尾，使页面加载速度更快 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://oss.devcp.org/js/artTemplate/template.js"></script>
+
+<script>
+    $(function () {
+        $.ajax({
+            url: "http://csee-china.cn/dxs-server/site/list.do",
+            // data: { bucket: 'csee' },
+            dataType: 'json'
+        }).done(function ( data ) {
+            $('#content').html(template('templateid', data));
+        });
+    });
+</script>
+
+
+</body>
+</html>
